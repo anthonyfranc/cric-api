@@ -387,7 +387,7 @@ app.get('/fetch-news/:matchSlug', async (req, res) => {
     }
 });
 
-app.get('/fetch-news-all', async (req, res) => {
+app.get('/api/fetch-news-all', async (req, res) => {
     try {
         const articles = await googleNewsScraper({
             searchTerm: `Cricket News`,
