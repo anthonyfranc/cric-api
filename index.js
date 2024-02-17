@@ -377,7 +377,7 @@ app.get('/fetch-news/:matchSlug', async (req, res) => {
                 ceid:"US:en"
               },
             timeframe: "1d",
-            puppeteerArgs: []
+            puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"]
         })
 
         res.json(articles);
