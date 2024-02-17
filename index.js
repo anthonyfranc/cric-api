@@ -404,7 +404,7 @@ app.get('/api/fetch-news-all', async (req, res) => {
         res.json(articles);
     } catch (error) {
         console.error('Error:', error.message);
-        res.status(500).json({ error: 'Internal Server Error' });
+        res.status(500).json({ error: error.message });
     }
 });
 
