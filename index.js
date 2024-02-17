@@ -398,7 +398,7 @@ app.get('/api/fetch-news-all', async (req, res) => {
                 ceid:"US:en"
               },
             timeframe: "12h",
-            puppeteerArgs: []
+            puppeteerArgs: ['--no-sandbox', '--disable-setuid-sandbox',]
         })
 
         res.json(articles);
