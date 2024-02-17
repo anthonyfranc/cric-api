@@ -377,7 +377,7 @@ app.get('/fetch-news/:matchSlug', async (req, res) => {
                 ceid:"US:en"
               },
             timeframe: "1d",
-            puppeteerArgs: ["--no-sandbox"]
+            puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"]
         })
 
         res.json(articles);
@@ -398,7 +398,7 @@ app.get('/api/fetch-news-all', async (req, res) => {
                 ceid:"US:en"
               },
             timeframe: "12h",
-            puppeteerArgs: ["--disable-setuid-sandbox"]
+            puppeteerArgs: ["--no-sandbox", "--disable-setuid-sandbox"]
         })
 
         res.json(articles);
