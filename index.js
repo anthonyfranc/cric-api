@@ -7,6 +7,10 @@ const cors = require('cors');
 const app = express();
 app.use(cors());
 
+app.get('/', async(req, res)=>{
+    res.status.json("Hello! Thank you for checking out. I am working !!");
+})
+
 // Define API endpoints
 app.get('/matches', async (req, res) => {
     try {
@@ -405,3 +409,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+module.exports = app;
