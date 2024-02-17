@@ -8,7 +8,12 @@ const app = express();
 app.use(cors());
 
 app.get('/', async(req, res)=>{
-    res.status.json("Hello! Thank you for checking out. I am working !!");
+    try {
+        res.json("Hello! Thank you for checking out. I am working !!");
+    } catch (error) {
+        console.error('Error:', error.message);
+        res.status(error.response ? error.response.status : 500).json({ error: error.message });
+    }
 })
 
 // Define API endpoints
